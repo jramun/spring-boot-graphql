@@ -1,0 +1,22 @@
+type Product {
+    id: ID,
+    name: String,
+    price:Int!
+}
+
+input ProductDto{
+    id: ID,
+    name: String,
+    price:Int
+}
+
+type Query {
+    findById(id: ID!): Product
+    findAll: [Product]
+}
+
+type Mutation {
+    insert(product: ProductDto): Product
+    put(productId:ID!,product: ProductDto): Product
+    delete(id: ID!): Boolean
+}

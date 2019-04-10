@@ -7,7 +7,6 @@ public class ProductDto {
 
     private int id;
     private String name;
-    private int price;
 
     public int getId() {
         return id;
@@ -25,19 +24,10 @@ public class ProductDto {
         this.name = name;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
     public Product getProduct() {
         Product p = new Product();
         p.setId(id);
         p.setName(name);
-        p.setPrice(price);
         return p;
     }
 }

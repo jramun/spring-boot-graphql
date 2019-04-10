@@ -1,22 +1,27 @@
-type Product {
-    id: ID,
-    name: String,
-    price:Int!
-}
+# This file was generated based on ".graphqlconfig". Do not edit manually.
 
-input ProductDto{
-    id: ID,
-    name: String,
-    price:Int
-}
-
-type Query {
-    findById(id: ID!): Product
-    findAll: [Product]
+schema {
+    query: Query
+    mutation: Mutation
 }
 
 type Mutation {
-    insert(product: ProductDto): Product
-    put(productId:ID!,product: ProductDto): Product
     delete(id: ID!): Boolean
+    insert(product: ProductDto): Product
+    put(product: ProductDto): Product
+}
+
+type Product {
+    id: ID
+    name: String
+}
+
+type Query {
+    findAll: [Product]
+    findById(id: ID!): Product
+}
+
+input ProductDto {
+    id: ID
+    name: String
 }

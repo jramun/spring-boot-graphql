@@ -13,7 +13,7 @@ public class ProductQuery implements GraphQLQueryResolver {
     @Autowired
     private ProductRepository productRepository;
 
-    public Product findById(long id) {
+    public Product findById(int id) {
         return productRepository.findById(id).get();
     }
 

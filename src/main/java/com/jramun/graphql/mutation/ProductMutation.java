@@ -21,11 +21,11 @@ public class ProductMutation implements GraphQLMutationResolver {
         return this.productRepository.save(dto.getProduct());
     }
 
-    public Product put(long productId, ProductDto dto) {
+    public Product put(ProductDto dto) {
         return this.productRepository.save(dto.getProduct());
     }
 
-    public boolean delete(long id) {
+    public boolean delete(int id) {
         productRepository.delete(productRepository.findById(id).get());
         return true;
     }
